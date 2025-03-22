@@ -1,10 +1,20 @@
 # transend-python
 
 ![Python Tests](https://github.com/TranstarIndustries/transend-python/workflows/Python%20Tests/badge.svg)
+![PyPI Version](https://img.shields.io/pypi/v/transend.svg)
+![PyPI Downloads](https://img.shields.io/pypi/dm/transend.svg)
 
 Python Client for the Transend APIs
 
 ## Installation
+
+### From PyPI (Recommended)
+
+```bash
+pip install transend
+```
+
+### From Source
 
 ```bash
 # Clone the repository
@@ -13,6 +23,9 @@ cd transend-python
 
 # Install dependencies
 pip install -r requirements.txt
+
+# Install in development mode
+pip install -e .
 ```
 
 ## Usage
@@ -71,3 +84,26 @@ This project uses GitHub Actions to automatically run tests on every push and pu
 The workflow runs tests on multiple Python versions (3.8, 3.9, 3.10, 3.11) to ensure compatibility.
 
 You can view the test results in the "Actions" tab of the GitHub repository.
+
+## Release Process
+
+This package uses GitHub Actions to automatically publish to PyPI when a new release is created:
+
+1. Update the version number in `setup.py`
+2. Create a new release on GitHub:
+   - Go to the repository's "Releases" section
+   - Click "Draft a new release"
+   - Choose or create a tag in the format `v{version}` (e.g., `v0.1.0`)
+   - Add a title and release notes
+   - Click "Publish release"
+3. The GitHub Actions workflow will automatically:
+   - Build the package
+   - Verify the package contents
+   - Upload the package to PyPI
+
+### Setting up PyPI publishing
+
+For the PyPI publishing to work, a PyPI API token needs to be added to the repository secrets:
+
+1. Create an API token in your PyPI account settings
+2. Add the token as a repository secret named `PYPI_API_TOKEN` in your GitHub repository settings
