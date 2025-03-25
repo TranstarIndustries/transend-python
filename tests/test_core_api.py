@@ -1,7 +1,7 @@
 import unittest
 from unittest.mock import patch, MagicMock
 import pytest
-from src.client import CoreAPI
+from transend.client import CoreAPI
 
 
 class TestCoreAPI(unittest.TestCase):

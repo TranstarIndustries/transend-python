@@ -1,7 +1,7 @@
 import unittest
 from unittest.mock import patch, MagicMock
 import pytest
-from src.client import TransendAPIClient, ProductAPI, BranchAPI, VehicleAPI, AccountAPI, ContentAPI, CoreAPI, CustomerAPI
+from transend.client import TransendAPIClient, ProductAPI, BranchAPI, VehicleAPI, AccountAPI, ContentAPI, CoreAPI, CustomerAPI
 
 
 class TestTransendAPIClient(unittest.TestCase):
@@ -55,17 +55,17 @@ class TestTransendAPIClient(unittest.TestCase):
         self.assertEqual(client.product.base_url, "https://api.transend.us/product")
 
     @patch('os.getenv')
-    @patch('src.client.AccountAPI.get_customer_info')
-    @patch('src.client.ContentAPI.get_articles')
-    @patch('src.client.CoreAPI.get_open_cores')
-    @patch('src.client.CustomerAPI.get_users')
-    @patch('src.client.ProductAPI.get_all_sort_types')
-    @patch('src.client.BranchAPI.get_all_branches')
-    @patch('src.client.VehicleAPI.get_all_dtcs')
-    @patch('src.client.VehicleAPI.get_years')
-    @patch('src.client.VehicleAPI.get_year_make_model_vhid')
-    @patch('src.client.VehicleAPI.get_vehicle_by_vhid')
-    @patch('src.client.BranchAPI.get_branch_by_number')
+    @patch('transend.client.AccountAPI.get_customer_info')
+    @patch('transend.client.ContentAPI.get_articles')
+    @patch('transend.client.CoreAPI.get_open_cores')
+    @patch('transend.client.CustomerAPI.get_users')
+    @patch('transend.client.ProductAPI.get_all_sort_types')
+    @patch('transend.client.BranchAPI.get_all_branches')
+    @patch('transend.client.VehicleAPI.get_all_dtcs')
+    @patch('transend.client.VehicleAPI.get_years')
+    @patch('transend.client.VehicleAPI.get_year_make_model_vhid')
+    @patch('transend.client.VehicleAPI.get_vehicle_by_vhid')
+    @patch('transend.client.BranchAPI.get_branch_by_number')
     def test_example_usage(
         self, 
         mock_get_branch_by_number,
@@ -97,7 +97,7 @@ class TestTransendAPIClient(unittest.TestCase):
         mock_get_branch_by_number.return_value = {"id": 1, "branchNumber": "420", "name": "Test Branch"}
 
         # Directly simulate the execution of the __main__ block
-        from src.client import TransendAPIClient
+        from transend import TransendAPIClient
         
         # Patch print to capture output
         with patch('builtins.print'):

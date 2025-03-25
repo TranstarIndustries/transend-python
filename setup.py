@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="transend",
-    version="0.1.0",
+    version="0.1.1",
     author="NexaMotion Group / Transtar Industries",
     author_email="dev@transtar1.com",
     description="Python Client for the Transend Automotive Tech APIs",
@@ -25,7 +25,7 @@ setuptools.setup(
         "Operating System :: OS Independent",
     ],
     package_dir={"": "src"},
-    packages=setuptools.find_packages(where="src"),
+    packages=["transend"],
     python_requires=">=3.8",
     install_requires=[
         "requests>=2.28.1",

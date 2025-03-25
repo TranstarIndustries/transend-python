@@ -1,7 +1,7 @@
 import unittest
 from unittest.mock import patch, MagicMock
 import pytest
-from src.client import BranchAPI
+from transend.client import BranchAPI
 
 
 class TestBranchAPI(unittest.TestCase):

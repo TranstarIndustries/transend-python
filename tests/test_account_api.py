@@ -2,7 +2,7 @@ import unittest
 from unittest.mock import patch, MagicMock
 import pytest
 from uuid import UUID
-from src.client import AccountAPI
+from transend.client import AccountAPI
 
 
 class TestAccountAPI(unittest.TestCase):
